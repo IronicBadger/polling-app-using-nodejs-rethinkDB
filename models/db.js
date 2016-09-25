@@ -42,7 +42,7 @@ class db {
 
   connectToRethinkDbServer(callback) {
     rethinkdb.connect({
-      host : 'localhost',
+      host : 'db',
       port : 28015
     }, function(err,connection) {
       callback(err,connection);
@@ -51,7 +51,7 @@ class db {
 
   connectToDb(callback) {
     rethinkdb.connect({
-      host : 'localhost',
+      host : 'db',
       port : 28015,
       db : 'polls'
     }, function(err,connection) {

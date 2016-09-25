@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  rethinkdb:
+    image: rethinkdb
+    container_name: db
+    networks:
+      - voting
+
+  poll:
+    build: .
+    ports: ["3000:3000"]
+    networks:
+      - voting
+
+networks:
+  voting:
